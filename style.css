@@ -1,0 +1,10 @@
+body h1{
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto",sans-serif;
+    color: blue;
+    text-align: center;
+}
+body span{
+    color: blueviolet;
+}
