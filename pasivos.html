@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style_pas.css">
+    <title>Gestionar Pasivos</title>
+</head>
+<body>
+    <h1>Gestionar Pasivos</h1>
+    <form method="POST">
+        <label for="cuenta">Cuenta:</label>
+        <input type="text" id="cuenta" name="cuenta" required><br><br>
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto" required><br><br>
+        <button type="submit">Agregar Pasivo</button>
+    </form>
+
+    <h2>Lista de Pasivos</h2>
+    <ul>
+        {% for pasivo in pasivos %}
+            <li>{{ pasivo[0] }}: ${{ pasivo[1] }}</li>
+        {% endfor %}
+    </ul>
+       
+
+    <form action="{{ url_for('reiniciar') }}" method="POST">
+        <button type="submit">Reiniciar Cuentas</button>
+    </form>
+
+
+    <br>
+    <a href="{{ url_for('index') }}">Volver al inicio</a>
+</body>
+</html>
