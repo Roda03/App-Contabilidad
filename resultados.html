@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style_res.css">
+    <title>Resultados Financieros</title>
+</head>
+<body>
+    <h1>Resultados Financieros</h1>
+    <p>Total Activos: ${{ total_activos }}</p>
+    <p>Total Pasivos: ${{ total_pasivos }}</p>
+    <h2>Patrimonio Neto: ${{ patrimonio_neto }}</h2>
+
+    <br>
+    <a href="{{ url_for('index') }}">Volver al inicio</a>
+</body>
+</html>
