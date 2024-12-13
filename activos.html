@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Activos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_act.css') }}">
+</head>
+<body>
+    <h1>Gestionar Activos</h1>
+    <form method="POST">
+        <label for="cuenta">Cuenta:</label>
+        <input type="text" id="cuenta" name="cuenta" required>
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto" required>
+        <button type="submit">Agregar</button>
+    </form>
+    <h2>Lista de Activos</h2>
+    <ul>
+        {% for cuenta, monto in activos %}
+            <li>{{ cuenta }}: {{ monto }}</li>
+        {% endfor %}
+    </ul>
+    
+
+    <form action="{{ url_for('reiniciar') }}" method="POST">
+        <button type="submit">Reiniciar Cuentas</button>
+    </form>
+
+
+    <a href="/">Volver al inicio</a>
+</body>
+</html>
