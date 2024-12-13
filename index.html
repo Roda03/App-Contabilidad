@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido al Sistema de  <span style="margin-left: 10px;margin-right:10px;">Gestión Financiero </span> </h1>
+    
+    <p>Selecciona una de las opciones para gestionar los datos:</p>
+    
+    <ul>
+        <li><a href="{{ url_for('gestionar_activos') }}">Gestionar Activos</a></li>
+        <li><a href="{{ url_for('gestionar_pasivos') }}">Gestionar Pasivos</a></li>
+        <li><a href="{{ url_for('resultado') }}">Ver Resultados Financieros</a></li>
+    </ul>
+
+    <form action="{{ url_for('reiniciar') }}" method="POST">
+        <button type="submit">Reiniciar Cuentas</button>
+    </form>
+    
+</body>
+</html>
